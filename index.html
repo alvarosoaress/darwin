@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darwin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sec2.css">
+    <link rel="stylesheet" type="text/css" href="sec3.css">
+    <link rel="stylesheet" type="text/css" href="scroll.css">
+    <link rel="stylesheet" type="text/css" href="secSummary.css">
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <script defer src="scroll.js"></script>
+    
+</head>
+
+<body>
+    <nav class="nav-sum">
+        <div class="nav-container">
+            <a href="#sec-summary" class="a-nav" id="a-0"> i</a>
+            <a href="#sec-1" class="a-nav" id="a-1" onclick="updateWaypoints()"> 1</a>
+            <a href="#sec-2" class="a-nav" id="a-2" onclick="updateWaypoints()"> 2</a>
+            <a href="#sec-3" class="a-nav" id="a-3" onclick="updateWaypoints()"> 3</a>
+        </div>
+    </nav>
+    <div class="container">
+        <section class="sec-header">
+            <div class="header-container" data-tilt>
+                <h1>DARWIN</h1>
+                <img src="/imgs/empresa.png" alt="" class="logo" data-tilt>
+            </div>
+        </section>
+
+        <section class="sec-summary sec" id="sec-summary">
+            <img src="imgs/empresa.png" alt="" class="emp-img">
+            <div class="sec-summary-div">
+                <div class="sec-text">
+                    <h1>Sumário</h1>
+                    <div class="separator"></div>
+                    <a href="#sec-1" class="index">⬤ PAGINA 1</a>
+                    <a href="#sec-2" class="index">⬤ PAGINA 2</a>
+                    <a href="#sec-3" class="index">⬤ PAGINA 3</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sec-1 sec" id="sec-1">
+            <div class="sec-div" id="div-1">
+                <img src="imgs/vermelho.png" alt="">
+                <div class="sec-text">
+                    <h1>Quem é Darwin?</h1>
+                    <div class="separator"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo
+                        repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque
+                        cumque nobis iusto molestias.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque
+                        vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sec-2 sec" id="sec-2">
+            <div class="circle"></div>
+            <div class="circle-2"></div>
+            <div class="sec-div" id="div-2">
+                <img src="imgs/autismo.png" alt="">
+                <div class="sec-text">
+                    <h1>Porque autismo?</h1>
+                    <div class="separator"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo
+                        repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque
+                        cumque nobis iusto molestias.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque
+                        vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="sec-3 sec" id="sec-3">
+            <div class="shape"></div>
+            <div class="shape-2"></div>
+            <div class="sec-div" id="div-3">
+                <img src="imgs/verde.png" alt="">
+                <div class="sec-text">
+                    <h1>Porque autismo?</h1>
+                    <div class="separator"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo
+                        repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque
+                        cumque nobis iusto molestias.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque
+                        vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <script src="vanilla-tilt.js"></script>
+    <script src="noframework.waypoints.js"></script>
+</body>
+
+</html>
