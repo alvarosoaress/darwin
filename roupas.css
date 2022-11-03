@@ -1,0 +1,64 @@
+.sec-roupas{
+    z-index: 303;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 25%;
+    margin-left: 0;
+    transition: all 400ms ease-in-out;
+    position: absolute !important;
+}
+
+.roupas{
+    margin: 2em;
+}
+
+.roupas img{
+    display: flex;
+    transform: translateX(-500em);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    transition: all 400ms ease-in-out;
+}
+
+.roupas:hover img{
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    transition: all 400ms ease-out;
+}
+
+.sec-3 .sec-div:hover .roupas img{
+    transform: translateX(0);
+}
+
+.shape.azul{
+    background: linear-gradient(270deg, #ff0a6c, #2d27ff);
+}
+
+.sec-roupas.clicked{
+    transition: all 400ms ease-in-out;
+    flex-direction: column;
+    margin: 0;
+}
+
+.sec-roupas.clicked > .roupas{
+    margin: 5%;
+    margin-left: 50%;
+}
+
+.sec-roupas.clicked > .roupas > img{
+    height: 150px;
+    width: 150px;
+}
+
+.roupa-p.small{
+    margin-left: 30% !important;
+    margin-top: 2em !important;
+    font-size: 13pt !important;
+}

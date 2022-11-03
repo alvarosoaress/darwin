@@ -39,3 +39,17 @@
     background-color: transparent;
     transform: translate(-5em, -5em);
 }
+
+.sec-div:hover{
+    height: 65vh;
+}
+
+.sec-div h1{
+    margin-left: 0%;
+}
+
+.sec-div:hover > .sec-text > p{
+    font-size: 24pt;
+    margin-left: 20%;
+    margin-top: 1%;
+}
