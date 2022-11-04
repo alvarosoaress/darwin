@@ -16,17 +16,17 @@ roupas.forEach(r => r.addEventListener("click", (e) => {
     let parent = e.target.parentNode
     let id = parent.getAttribute('id').slice(3);
     if (id == 1) {
-        roupaClicked("vermelho", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque cumque nobis iusto molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo")
+        roupaClicked("vermelho", "O vermelho é uma cor forte, poderosa e com muita energia por trás dela. Pode ser ousado ou intenso, mas também é quente e convidativo. É uma cor ousada e apaixonada que pode fazer uma pessoa se sentir confiante e ousada em qualquer situação. O vermelho também pode ser usado para expressar raiva ou frustração quando você está se sentindo fortemente em relação a algo.")
         rotateCharacter("vermelho")
         updateRotation("vermelho")
     }
     if (id == 2) {
-        roupaClicked("verde", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque cumque nobis iusto molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo")
+        roupaClicked("verde", "O verde é a cor da natureza, do crescimento e da renovação. É uma cor que tem sido associada à paz, harmonia e equilíbrio por milhares de anos. As pessoas costumam usar o verde porque querem sentir-se calmas e aterrorizadas em seu entorno.")
         rotateCharacter("verde")
         updateRotation("verde")
     }
     if (id == 3) {
-        roupaClicked("azul", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque cumque nobis iusto molestias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo")
+        roupaClicked("azul", "O azul é a cor da tranquilidade, trazendo um efeito calmante sobre o corpo, sendo bastante usado quando a pessoa está se sentindo em baixo ou ansioso, usar o azul pode ajudá-lo a se acalmar, pensar racionalmente e se sentir melhor.")
         rotateCharacter("azul")
         updateRotation("azul")
     }
