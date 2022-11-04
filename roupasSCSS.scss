@@ -1,0 +1,154 @@
+$transition: all 400ms ease-in-out;
+
+@mixin glassmorph {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.54);
+}
+
+.sec-roupas {
+    z-index: 303;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 25%;
+    margin-left: 0;
+    transition: $transition;
+    position: absolute !important;
+
+    .roupas {
+        display: none;
+        margin: 2em;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+
+        img {
+            display: flex;
+            transform: translateX(-500em);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            transform: translateZ(20px);
+            transition: $transition;
+        }
+
+        &:hover {
+
+            img {
+                background: rgba(255, 255, 255, 0.10);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(3px);
+                border: 1px solid rgba(255, 255, 255, 0.54);
+                transition: all 400ms ease-out;
+            }
+        }
+    }
+}
+
+.sec-roupas.clicked {
+    flex-direction: column;
+    margin: 0;
+
+    .roupas {
+        margin: 5%;
+        margin-left: 50%;
+
+        img {
+            height: 150px;
+            width: 150px;
+        }
+    }
+}
+
+
+.sec-3 {
+    .sec-div {
+
+        .roupa-button {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            transition: $transition;
+            @include glassmorph();
+        }
+
+        &:hover {
+            .roupas {
+                display: flex;
+
+                img {
+                    transform: translateX(0);
+                }
+            }
+
+
+            .roupa-button.appear {
+                opacity: 1;
+                width: 20%;
+                height: 10%;
+                text-align: center;
+                transform: translate(50%, 15%);
+                margin-top: 1%;
+                font-size: 12pt;
+                color: white;
+
+                &::before {
+                    content: "Ver roupa";
+                }
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.0);
+                }
+            }
+        }
+    }
+}
+
+
+.roupa-popup {
+    z-index: 404;
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    width: 100vw;
+    height: 110vh;
+    transition: $transition;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+
+    .inner-popup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba($color: #020202, $alpha: 0.5);
+        transition: $transition;
+        border-radius: 50%;
+        width: 38em;
+        height: 38em;
+
+        .popup-button {
+            width: 20%;
+            height: 10%;
+            text-align: center;
+            transform: translate(50%, 15%);
+            margin-top: 1%;
+            font-size: 12pt;
+            color: white;
+            transition: $transition;
+            @include glassmorph();
+
+            &:hover {
+                background: rgb(85, 84, 84);
+            }
+        }
+    }
+}

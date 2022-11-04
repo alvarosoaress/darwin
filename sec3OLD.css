@@ -1,0 +1,48 @@
+.shape{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transform: translate(30em, -5em);
+    border-radius: 16% 84% 0% 100% / 61% 0% 100% 39%;
+    background: linear-gradient(270deg, #3ea923, #7bb356);
+    background-size: 400% 400%;
+
+    -webkit-animation: color 10s ease infinite;
+    -moz-animation: color 10s ease infinite;
+    animation: color 10s ease infinite;
+}
+
+@-webkit-keyframes color {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes color {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes color {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+#shape-2{
+    border-radius: 0% 100% 48% 52% / 49% 57% 43% 51% ;
+    transform: translate(-30em, 15em);
+}
+
+.sec-3 img{
+    border-radius: 0%;
+    background-color: transparent;
+    transform: translate(-5em, -5em);
+}
+
+.sec-div:hover{
+    height: 65vh;
+}
+
+.sec-div h1{
+    margin-left: 0%;
+}

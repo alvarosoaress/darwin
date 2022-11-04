@@ -34,15 +34,6 @@ function removePoint(){
 updateWaypoints()
 
 function updateWaypoints(){
-var waypointI = new Waypoint({
-    element: document.getElementById('sec-summary'),
-    handler: function() {
-        removePoint()
-        const a0 = document.getElementById('a-0')
-        a0.classList.add("view");
-    }
-  })
-
 var waypoint = new Waypoint({
     element: document.getElementById('sec-1'),
     handler: function() {

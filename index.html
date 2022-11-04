@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darwin</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sec1.css">
     <link rel="stylesheet" type="text/css" href="sec2.css">
     <link rel="stylesheet" type="text/css" href="sec3.css">
     <link rel="stylesheet" type="text/css" href="scroll.css">
-    <link rel="stylesheet" type="text/css" href="secSummary.css">
     <link rel="stylesheet" type="text/css" href="nav.css">
-    <link rel="stylesheet" type="text/css" href="roupas.css">
+    <link rel="stylesheet" href="roupasSCSS.css">
     <script defer src="scroll.js"></script>
     <script defer src="roupas.js"></script>
 
@@ -21,7 +20,6 @@
 <body>
     <nav class="nav-sum">
         <div class="nav-container">
-            <a href="#sec-summary" class="a-nav" id="a-0"> i</a>
             <a href="#sec-1" class="a-nav" id="a-1" onclick="updateWaypoints()"> 1</a>
             <a href="#sec-2" class="a-nav" id="a-2" onclick="updateWaypoints()"> 2</a>
             <a href="#sec-3" class="a-nav" id="a-3" onclick="updateWaypoints()"> 3</a>
@@ -35,15 +33,18 @@
             </div>
         </section>
 
-        <section class="sec-summary sec" id="sec-summary">
-            <img src="imgs/empresa.png" alt="" class="emp-img">
-            <div class="sec-summary-div">
+        <section class="sec-1 sec" id="sec-1">
+            <div class="sec-div" id="div-1">
+                <img src="imgs/empresa.png" alt="" class="sec-4-img">
                 <div class="sec-text">
-                    <h1>Sumário</h1>
+                    <h1>CREATIVE ?</h1>
                     <div class="separator"></div>
-                    <a href="#sec-1" class="index">⬤ PAGINA 1</a>
-                    <a href="#sec-2" class="index">⬤ PAGINA 2</a>
-                    <a href="#sec-3" class="index">⬤ PAGINA 3</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, asperiores cum id sit explicabo
+                        repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque
+                        cumque nobis iusto molestias.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque
+                        vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalo .
+                    </p>
                 </div>
 
             </div>
@@ -51,7 +52,7 @@
 
         <section class="sec-1 sec" id="sec-1">
             <div class="sec-div" id="div-1">
-                <img src="imgs/vermelho.png" alt="">
+                <img src="imgs/vermelho2222.png" alt="" class="sec-1-img">
                 <div class="sec-text">
                     <h1>Quem é Darwin?</h1>
                     <div class="separator"></div>
@@ -59,7 +60,7 @@
                         repellendus voluptates voluptatibus ipsum ducimus ea quod recusandae tenetur iste eos doloremque
                         cumque nobis iusto molestias.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eum asperiores ad quae ab eaque
-                        vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illo.
+                        vel libero fugit, distinctio amet alias esse, excepturi perspiciatis quam minus blanditiis illoaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalo .
                     </p>
                 </div>
 
@@ -85,26 +86,33 @@
             </div>
         </section>
 
+        <div class="roupa-popup">
+            <div class="inner-popup">
+                <img src="imgs/vermelho.png" alt="" class="popup-img" data-tilt data-tilt-scale="1.1">
+                <button onclick="popupBlockScroll()" class="popup-button">Fechar</button>
+            </div>
+        </div>
         <section class="sec-3 sec" id="sec-3">
-            <div class="shape"></div>
-            <div class="shape-2"></div>
+            <div class="shape" id="shape-1"></div>
+            <div class="shape" id="shape-2"></div>
             <div class="sec-div" id="div-3">
                 <div class="sec-roupas">
                     <a class="roupas" id="id-1" data-tilt>
-                        <img src="imgs/verde.png" alt="">
+                        <img src="imgs/vermelhoPerfil.png" alt="">
                     </a>
                     <a class="roupas" id="id-2" data-tilt>
-                        <img src="imgs/vermelho.png" alt="">
+                        <img src="imgs/verdePerfil.png" alt="">
                     </a>
                     <a class="roupas" id="id-3" data-tilt>
-                        <img src="imgs/verde.png" alt="">
+                        <img src="imgs/azulPerfil.png" alt="">
                     </a>
                 </div>
                 <div class="sec-text">
                     <h1>Roupas</h1>
                     <div class="separator"></div>
-                    <p class="roupa-p">Escolha uma roupa
+                    <p class="roupa-p">
                     </p>
+                    <button onclick="popupBlockScroll()" class="roupa-button"></button>
                 </div>
 
             </div>

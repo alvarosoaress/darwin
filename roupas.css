@@ -12,7 +12,14 @@
 }
 
 .roupas{
+    display: none;
     margin: 2em;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.sec-div:hover .roupas{
+    display: flex;
 }
 
 .roupas img{
@@ -21,7 +28,12 @@
     border-radius: 50%;
     width: 200px;
     height: 200px;
+    transform: translateZ(20px);
     transition: all 400ms ease-in-out;
+}
+
+.roupas:hover{
+    display: flex;
 }
 
 .roupas:hover img{
@@ -42,7 +54,6 @@
 }
 
 .sec-roupas.clicked{
-    transition: all 400ms ease-in-out;
     flex-direction: column;
     margin: 0;
 }
@@ -57,8 +68,19 @@
     width: 150px;
 }
 
-.roupa-p.small{
-    margin-left: 30% !important;
-    margin-top: 2em !important;
-    font-size: 13pt !important;
+.roupa-popup{
+    z-index: 404;
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0 0 0 .3)
+}
+
+.sec-roupas.clicked ~ .roupa-popup{
+    display: flex;
 }
