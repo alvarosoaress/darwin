@@ -1,0 +1,28 @@
+.sec-header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.header-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.sec-header h1{
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+}
