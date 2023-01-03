@@ -1,15 +1,9 @@
-.sec {
+.sec-div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-}
-
-.sec-div {
-    display: inline-flex;
+    justify-content: space-around;
+    padding: 1rem;
     margin: 2em;
     width: 55vw;
     height: 25vh;
@@ -22,9 +16,11 @@
     transition: all 400ms ease-out;
 }
 
-.sec-text {
-    width: 100%;
-    position: relative;
+.sec-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .sec-img {
@@ -36,32 +32,24 @@
     transition: all 800ms ease-in;
 }
 
-
-.sec-text h1 {
-    padding-left: 15%;
-    padding-top: 6%;
+.sec-div h1 {
     color: white;
     font-weight: bold;
-    font-size: 44pt;
- 
+    font-size: 3rem;
+
 }
 
-.sec-text p {
-    margin-left: 30%;
-    margin-top: 2em;
+.sec-div p {
+    display: none;
+    margin-top: 1rem;
     opacity: 0;
     text-align: center;
-    font-size: 0;
+    font-size: 1.2rem;
     color: white;
-    width: 60%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
     transition: all 400ms ease-in-out;
 }
 
 .separator {
-    position: absolute;
     left: 30%;
     height: 5px;
     width: 50px;
@@ -78,15 +66,41 @@
 
 .sec-div:hover .separator {
     height: 2px;
-    width: 475px;
+    width: 60%;
 }
 
-.sec-div:hover .sec-text p {
+.sec-div:hover p {
     opacity: 1;
-    font-size: 12pt;
-    letter-spacing: 1px;
+    display: block;
 }
 
-.sec-div:hover .sec-img {
-    top: 2em;
+@media screen and (max-width: 800px) {
+    .sec-div h1 {
+        font-size: 2.5rem;
+    }
+
+    .sec-div p {
+        font-size: 0.9rem;
+    }
+
+    .sec-img {
+        top: -10em;
+        left: -5em;
+    }
+}
+
+@media screen and (max-width: 601px) {
+    .sec-div h1 {
+        font-size: 1.7rem;
+    }
+
+    .sec-div p {
+        font-size: 0.7rem;
+    }
+
+    .sec-img {
+        width: 70%;
+        top: -5em;
+        left: -7em;
+    }
 }
