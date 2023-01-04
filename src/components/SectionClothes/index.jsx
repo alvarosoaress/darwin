@@ -55,10 +55,12 @@ export default function SecClothes({ titulo }) {
       <SecForm
         gradient={{ first: firstGradient, second: secondGradient }}
         position={{ X: "-55vw", Y: "-1vh" }}
+        borderRadius="0% 100% 48% 52%/49% 57% 43% 51%"
       />
       <SecForm
         gradient={{ first: firstGradient, second: secondGradient }}
         position={{ X: "25vw", Y: "-15vh" }}
+        borderRadius="0% 100% 48% 52%/49% 57% 43% 51%"
       />
       <AnimationOnScroll
         animateIn="animate__fadeInLeft"
