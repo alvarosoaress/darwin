@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
 
-import "./secClothes.css";
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
@@ -11,6 +10,20 @@ import SecForm from "../SectionForm/secForm";
 import vermelho from "../../imgs/vermelhoPerfil.png";
 import azul from "../../imgs/azulPerfil.png";
 import verde from "../../imgs/verdePerfil.png";
+import {
+  Button,
+  ButtonClose,
+  ButtonLeft,
+  ButtonRight,
+  Popup,
+  PopupBackground,
+  PopupImg,
+  SecClothesDiv,
+  SecClothesImg,
+  SecClothesText,
+  Title,
+} from "./styled";
+import { SecDiv } from "../Section/styled";
 
 export default function SecClothes({ titulo }) {
   const displayImgs = [vermelho, azul, verde];
@@ -38,102 +51,97 @@ export default function SecClothes({ titulo }) {
   const secondGradient = colorGradient[clothColor][1];
 
   return (
-    <AnimationOnScroll
-      animateIn="animate__fadeInLeft"
-      animateOut="animate__fadeOut"
-    >
-      <div
-        className="popup"
-        style={{ display: clothDisplay ? "flex" : "none" }}
-      >
-        <button
-          type="button"
-          className="popup-button-left"
-          onClick={() => {
-            setClothNum(clothNum <= 1 ? 4 : clothNum - 1);
-          }}
-        >
-          {" "}
-          {"<"}{" "}
-        </button>
-        <div className="popup-backgroud" />
-        <img
-          src={`${process.env.PUBLIC_URL}/roupas/${clothColor}/${clothNum}.png`}
-          className="popup-image"
-          alt=""
-        />
-        <button
-          type="button"
-          className="popup-button-right"
-          onClick={() => {
-            setClothNum(clothNum >= 4 ? 1 : clothNum + 1);
-          }}
-        >
-          {" "}
-          {">"}{" "}
-        </button>
-        <button
-          type="button"
-          className="popup-button-close"
-          onClick={() => {
-            setClothDisplay(!clothDisplay);
-          }}
-        >
-          X
-        </button>
-      </div>
+    <>
       <SecForm
         gradient={{ first: firstGradient, second: secondGradient }}
-        position={{ X: "-20em", Y: "-1em" }}
+        position={{ X: "-55vw", Y: "-1vh" }}
       />
       <SecForm
         gradient={{ first: firstGradient, second: secondGradient }}
-        position={{ X: "50em", Y: "-10em" }}
+        position={{ X: "25vw", Y: "-15vh" }}
       />
-
-      <h1>{titulo}</h1>
-      <div
-        className="sec-div"
-        style={{ flexDirection: clothState ? "row" : "column" }}
+      <AnimationOnScroll
+        animateIn="animate__fadeInLeft"
+        animateOut="animate__fadeOut"
       >
-        <div className={clothState ? "sec-clothes-clicked" : "sec-clothes"}>
-          {displayImgs.map((img, index) => (
-            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-            <img
-              src={img}
-              alt=""
-              className="sec-clothes-img"
-              onClick={() => {
-                if (clothColor === colorOptions[index]) {
-                  setClothState(false);
-                  setClothColor("padrao");
-                } else {
-                  setClothState(true);
-                  setClothColor(colorOptions[index]);
-                }
-              }}
-            />
-          ))}
-        </div>
-        <div
-          style={{ display: clothState ? "flex" : "none" }}
-          className="sec-clothes-text"
-        >
-          <p>{textColor[clothColor]}</p>
-          <button
+        <Popup style={{ display: clothDisplay ? "flex" : "none" }}>
+          <ButtonLeft
+            type="button"
+            onClick={() => {
+              setClothNum(clothNum <= 1 ? 4 : clothNum - 1);
+            }}
+          >
+            {"<"}
+          </ButtonLeft>
+          <PopupBackground />
+          <PopupImg
+            src={`${process.env.PUBLIC_URL}/roupas/${clothColor}/${clothNum}.png`}
+            alt=""
+          />
+          <ButtonRight
+            type="button"
+            onClick={() => {
+              setClothNum(clothNum >= 4 ? 1 : clothNum + 1);
+            }}
+          >
+            {">"}
+          </ButtonRight>
+          <ButtonClose
             type="button"
             onClick={() => {
               setClothDisplay(!clothDisplay);
             }}
           >
-            Ver Roupa
-          </button>
-        </div>
-      </div>
-    </AnimationOnScroll>
+            X
+          </ButtonClose>
+        </Popup>
+
+        <Title>{titulo}</Title>
+        <SecDiv
+          className="sec-div"
+          style={{ flexDirection: clothState ? "row" : "column" }}
+        >
+          <SecClothesDiv
+            style={{ flexDirection: clothState ? "column" : "row" }}
+          >
+            {displayImgs.map((img, index) => (
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+              <SecClothesImg
+                style={{ width: clothState ? "150px" : "250px" }}
+                src={img}
+                alt=""
+                onClick={() => {
+                  if (clothColor === colorOptions[index]) {
+                    setClothState(false);
+                    setClothColor("padrao");
+                  } else {
+                    setClothState(true);
+                    setClothColor(colorOptions[index]);
+                  }
+                }}
+              />
+            ))}
+          </SecClothesDiv>
+          <SecClothesText style={{ display: clothState ? "flex" : "none" }}>
+            <p>{textColor[clothColor]}</p>
+            <Button
+              type="button"
+              onClick={() => {
+                setClothDisplay(!clothDisplay);
+              }}
+            >
+              Ver Roupa
+            </Button>
+          </SecClothesText>
+        </SecDiv>
+      </AnimationOnScroll>
+    </>
   );
 }
+SecClothes.defaultProps = {
+  titulo: null,
+};
 
 SecClothes.propTypes = {
-  titulo: PropTypes.string.isRequired,
+  titulo: PropTypes.string,
 };

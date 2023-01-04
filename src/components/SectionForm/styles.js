@@ -28,4 +28,9 @@ export const Form = styled.div`
     left: 0;
     top: -160px;
   }
+
+  @media screen and (max-width: 425px) {
+    width: 325px;
+    height: 325px;
+  }
 `;

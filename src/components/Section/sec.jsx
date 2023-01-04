@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import "./sec.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { SecDiv, SecImg, SecText, Separator } from "./styled";
 import "animate.css/animate.min.css";
 
 export default function Sec({ imagem, titulo, texto }) {
@@ -12,14 +13,14 @@ export default function Sec({ imagem, titulo, texto }) {
       animateIn="animate__fadeInLeft"
       animateOut="animate__fadeOut"
     >
-      <div className="sec-div">
-        <img src={imagem} alt="" className="sec-img" />
+      <SecDiv>
+        <SecImg src={imagem} alt="" />
         <h1>{titulo}</h1>
-        <div className="sec-text">
-          <div className="separator" />
+        <SecText>
+          <Separator />
           <p>{texto}</p>
-        </div>
-      </div>
+        </SecText>
+      </SecDiv>
     </AnimationOnScroll>
   );
 }

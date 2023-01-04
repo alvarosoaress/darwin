@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Tilt from "react-parallax-tilt";
 
@@ -6,19 +6,6 @@ import "./Header.css";
 import empresa from "../../imgs/empresa.png";
 
 function Header() {
-  useEffect(() => {
-    const script = document.createElement("script");
-
-    script.src = "./vanilla-tilt.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <section className="sec-header">
       <Tilt gyroscope tiltMaxAngleX={20} tiltMaxAngleY={20}>

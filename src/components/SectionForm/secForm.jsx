@@ -22,8 +22,18 @@ export default function SecForm({ gradient, borderRadius, position }) {
   );
 }
 
+SecForm.defaultProps = {
+  borderRadius: null,
+};
+
 SecForm.propTypes = {
-  gradient: PropTypes.string.isRequired,
-  borderRadius: PropTypes.string.isRequired,
-  position: PropTypes.node.isRequired,
+  borderRadius: PropTypes.string,
+  gradient: PropTypes.shape({
+    firstGradient: PropTypes.string,
+    secondGradient: PropTypes.string,
+  }).isRequired,
+  position: PropTypes.shape({
+    X: PropTypes.string,
+    Y: PropTypes.string,
+  }).isRequired,
 };
