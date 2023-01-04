@@ -6,7 +6,7 @@ const color = keyframes`
     100%{background-position:0% 50%}
 `;
 
-export const Form = styled.div`
+export const Shape = styled.div`
   position: absolute;
   width: 400px;
   height: 400px;

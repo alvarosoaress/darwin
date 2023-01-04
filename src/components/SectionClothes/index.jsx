@@ -5,7 +5,7 @@ import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import PropTypes from "prop-types";
-import SecForm from "../SectionForm/secForm";
+import SecForm from "../SectionShape";
 
 import vermelho from "../../imgs/vermelhoPerfil.png";
 import azul from "../../imgs/azulPerfil.png";

@@ -1,9 +1,9 @@
 import React from "react";
 
-import Header from "./components/Header/Header";
-import Sec from "./components/Section/sec";
-import SecForm from "./components/SectionForm/secForm";
-import SecClothes from "./components/SectionClothes/secClothes";
+import Header from "./components/Header";
+import Sec from "./components/Section";
+import Shape from "./components/SectionShape";
+import SecClothes from "./components/SectionClothes";
 
 import empresa from "./imgs/empresa.png";
 import darwin from "./imgs/darwin.png";
@@ -34,12 +34,12 @@ function App() {
         </section>
 
         <section className="sec">
-          <SecForm
+          <Shape
             gradient={{ first: "#ff0a6c", second: "#2d27ff" }}
             borderRadius="50%"
             position={{ X: "25vw", Y: "-15vh" }}
           />
-          <SecForm
+          <Shape
             gradient={{ first: "#ff0a6c", second: "#2d27ff" }}
             borderRadius="50%"
             position={{ X: "-55vw", Y: "-1vh" }}
@@ -52,12 +52,12 @@ function App() {
         </section>
 
         <section className="sec">
-          <SecForm
+          <Shape
             gradient={{ first: "#603813", second: "#b29f94" }}
             borderRadius="0% 100% 100% 0% / 55% 100% 0% 45%"
             position={{ X: "25vw", Y: "-15vh" }}
           />
-          <SecForm
+          <Shape
             gradient={{ first: "#603813", second: "#b29f94" }}
             borderRadius="100% 0% 49% 51% / 0% 17% 83% 100%"
             position={{ X: "-55vw", Y: "-1vh" }}

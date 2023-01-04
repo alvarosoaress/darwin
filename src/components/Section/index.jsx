@@ -2,7 +2,6 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import "./sec.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { SecDiv, SecImg, SecText, Separator } from "./styled";
 import "animate.css/animate.min.css";
