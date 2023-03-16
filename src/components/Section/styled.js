@@ -1,6 +1,34 @@
 import styled from "styled-components";
 import { SecClothesDiv } from "../SectionClothes/styled";
 
+export const Separator = styled.div`
+  left: 30%;
+  height: 5px;
+  width: 50px;
+  background-color: white;
+  transition: all 700ms ease-in-out;
+`;
+
+export const SecImg = styled.img`
+  position: absolute;
+  width: 200px;
+  left: 0;
+  top: -5em;
+  scale: 0.7;
+  transition: all 800ms ease-in;
+
+  @media screen and (max-width: 800px) {
+    top: -10em;
+    left: -5em;
+  }
+
+  @media screen and (max-width: 601px) {
+    width: 70%;
+    top: -5em;
+    left: -7em;
+  }
+`;
+
 export const SecDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,14 +37,14 @@ export const SecDiv = styled.div`
   padding: 1rem;
   margin: 2em;
   width: 55vw;
-  height: 25vh;
+  height: 100%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.54);
-  transition: all 400ms ease-out;
+  scroll-snap-align: center;
 
   h1 {
     color: white;
@@ -35,7 +63,7 @@ export const SecDiv = styled.div`
   }
 
   :hover {
-    height: 55vh;
+    //height: 55%;
     box-shadow: 7px 3px 16px 10px rgba(92, 92, 92, 0.75);
     -webkit-box-shadow: 7px 3px 16px 10px rgba(92, 92, 92, 0.75);
     -moz-box-shadow: 7px 3px 16px 10px rgba(92, 92, 92, 0.75);
@@ -46,6 +74,15 @@ export const SecDiv = styled.div`
 
     ${SecClothesDiv} {
       display: flex;
+    }
+
+    ${Separator} {
+      height: 2px;
+      width: 60%;
+    }
+
+    ${SecImg} {
+      top: -7em;
     }
 
     button {
@@ -85,41 +122,8 @@ export const SecDiv = styled.div`
   }
 `;
 
-export const SecImg = styled.img`
-  position: absolute;
-  width: 200px;
-  left: 0;
-  top: -5em;
-  scale: 0.7;
-  transition: all 800ms ease-in;
-
-  @media screen and (max-width: 800px) {
-    top: -10em;
-    left: -5em;
-  }
-
-  @media screen and (max-width: 601px) {
-    width: 70%;
-    top: -5em;
-    left: -7em;
-  }
-`;
-
 export const SecText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const Separator = styled.div`
-  left: 30%;
-  height: 5px;
-  width: 50px;
-  background-color: white;
-  transition: all 700ms ease-in;
-
-  :hover {
-    height: 2px;
-    width: 60%;
-  }
 `;

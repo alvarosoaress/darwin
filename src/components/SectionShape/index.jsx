@@ -11,7 +11,6 @@ export default function SecShape({ gradient, borderRadius, position }) {
     <AnimationOnScroll
       animateIn="animate__fadeInLeft"
       animateOut="animate__fadeOut"
-      offset={100}
     >
       <Shape
         gradient={gradient}

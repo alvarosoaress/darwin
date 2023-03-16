@@ -7,6 +7,8 @@ export const SecHeader = styled.header`
   justify-content: center;
   align-items: center;
   background-color: black;
+  scroll-snap-align: center;
+
   h1 {
     font-size: 5em;
     font-weight: bold;
