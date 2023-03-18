@@ -14,6 +14,7 @@ export const Shape = styled.div`
     props.borderRadius ? props.borderRadius : "50%"};
   top: ${(props) => props.position.Y};
   left: ${(props) => props.position.X};
+  right: ${(props) => props.position.R};
   background: linear-gradient(
     270deg,
     ${(props) => props.gradient.first},
@@ -25,8 +26,7 @@ export const Shape = styled.div`
 
   @media screen and (max-width: 800px) {
     border-radius: 50%;
-    left: 0;
-    top: -160px;
+    //top: -160px;
   }
 
   @media screen and (max-width: 425px) {

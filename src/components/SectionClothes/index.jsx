@@ -1,9 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from "react";
 
-import "animate.css/animate.min.css";
-import { AnimationOnScroll } from "react-animation-on-scroll";
-
 import PropTypes from "prop-types";
 import SecForm from "../SectionShape";
 
@@ -50,93 +47,89 @@ export default function SecClothes({ titulo }) {
   const firstGradient = colorGradient[clothColor][0];
   const secondGradient = colorGradient[clothColor][1];
 
+  const SCREEN_SIZE = window.screen.width;
+
   return (
     <>
       <SecForm
         gradient={{ first: firstGradient, second: secondGradient }}
-        position={{ X: "-55vw", Y: "-1vh" }}
+        position={{ R: "0", Y: SCREEN_SIZE <= 800 ? "-20vh" : "" }}
         borderRadius="0% 100% 48% 52%/49% 57% 43% 51%"
       />
       <SecForm
         gradient={{ first: firstGradient, second: secondGradient }}
-        position={{ X: "25vw", Y: "-15vh" }}
+        position={{ X: "-40px", Y: SCREEN_SIZE <= 800 ? "85vh" : "" }}
         borderRadius="0% 100% 48% 52%/49% 57% 43% 51%"
       />
-      <AnimationOnScroll
-        animateIn="animate__fadeInLeft"
-        animateOut="animate__fadeOut"
+
+      <Popup style={{ display: clothDisplay ? "flex" : "none" }}>
+        <ButtonLeft
+          type="button"
+          onClick={() => {
+            setClothNum(clothNum <= 1 ? 4 : clothNum - 1);
+          }}
+        >
+          {"<"}
+        </ButtonLeft>
+        <PopupBackground />
+        <PopupImg
+          src={`${process.env.PUBLIC_URL}/roupas/${clothColor}/${clothNum}.png`}
+          alt=""
+        />
+        <ButtonRight
+          type="button"
+          onClick={() => {
+            setClothNum(clothNum >= 4 ? 1 : clothNum + 1);
+          }}
+        >
+          {">"}
+        </ButtonRight>
+        <ButtonClose
+          type="button"
+          onClick={() => {
+            setClothDisplay(!clothDisplay);
+          }}
+        >
+          X
+        </ButtonClose>
+      </Popup>
+
+      <Title>{titulo}</Title>
+      <SecDiv
+        className="sec-div"
+        style={{ flexDirection: clothState ? "row" : "column" }}
       >
-        <Popup style={{ display: clothDisplay ? "flex" : "none" }}>
-          <ButtonLeft
-            type="button"
-            onClick={() => {
-              setClothNum(clothNum <= 1 ? 4 : clothNum - 1);
-            }}
-          >
-            {"<"}
-          </ButtonLeft>
-          <PopupBackground />
-          <PopupImg
-            src={`${process.env.PUBLIC_URL}/roupas/${clothColor}/${clothNum}.png`}
-            alt=""
-          />
-          <ButtonRight
-            type="button"
-            onClick={() => {
-              setClothNum(clothNum >= 4 ? 1 : clothNum + 1);
-            }}
-          >
-            {">"}
-          </ButtonRight>
-          <ButtonClose
+        <SecClothesDiv style={{ flexDirection: clothState ? "column" : "row" }}>
+          {displayImgs.map((img, index) => (
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+            <SecClothesImg
+              style={{ width: clothState ? "150px" : "250px" }}
+              src={img}
+              alt=""
+              onClick={() => {
+                if (clothColor === colorOptions[index]) {
+                  setClothState(false);
+                  setClothColor("padrao");
+                } else {
+                  setClothState(true);
+                  setClothColor(colorOptions[index]);
+                }
+              }}
+            />
+          ))}
+        </SecClothesDiv>
+        <SecClothesText style={{ display: clothState ? "flex" : "none" }}>
+          <p>{textColor[clothColor]}</p>
+          <Button
             type="button"
             onClick={() => {
               setClothDisplay(!clothDisplay);
             }}
           >
-            X
-          </ButtonClose>
-        </Popup>
-
-        <Title>{titulo}</Title>
-        <SecDiv
-          className="sec-div"
-          style={{ flexDirection: clothState ? "row" : "column" }}
-        >
-          <SecClothesDiv
-            style={{ flexDirection: clothState ? "column" : "row" }}
-          >
-            {displayImgs.map((img, index) => (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <SecClothesImg
-                style={{ width: clothState ? "150px" : "250px" }}
-                src={img}
-                alt=""
-                onClick={() => {
-                  if (clothColor === colorOptions[index]) {
-                    setClothState(false);
-                    setClothColor("padrao");
-                  } else {
-                    setClothState(true);
-                    setClothColor(colorOptions[index]);
-                  }
-                }}
-              />
-            ))}
-          </SecClothesDiv>
-          <SecClothesText style={{ display: clothState ? "flex" : "none" }}>
-            <p>{textColor[clothColor]}</p>
-            <Button
-              type="button"
-              onClick={() => {
-                setClothDisplay(!clothDisplay);
-              }}
-            >
-              Ver Roupa
-            </Button>
-          </SecClothesText>
-        </SecDiv>
-      </AnimationOnScroll>
+            Ver Roupa
+          </Button>
+        </SecClothesText>
+      </SecDiv>
     </>
   );
 }

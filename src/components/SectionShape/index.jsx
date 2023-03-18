@@ -2,22 +2,15 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { AnimationOnScroll } from "react-animation-on-scroll";
-import "animate.css/animate.min.css";
 import { Shape } from "./styled";
 
 export default function SecShape({ gradient, borderRadius, position }) {
   return (
-    <AnimationOnScroll
-      animateIn="animate__fadeInLeft"
-      animateOut="animate__fadeOut"
-    >
-      <Shape
-        gradient={gradient}
-        borderRadius={borderRadius}
-        position={position}
-      />
-    </AnimationOnScroll>
+    <Shape
+      gradient={gradient}
+      borderRadius={borderRadius}
+      position={position}
+    />
   );
 }
 

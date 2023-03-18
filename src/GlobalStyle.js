@@ -30,8 +30,11 @@ export default createGlobalStyle`
 
   .container {
     background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    scrollbar-width: none;
   }
 
   .sec {
@@ -40,10 +43,10 @@ export default createGlobalStyle`
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100vw;
-    height: 125vh;
+    height: 100vh;
     overflow-x: hidden;
     scroll-snap-align: center;
+    position: relative;
   }
 
 `;

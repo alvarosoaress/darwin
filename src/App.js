@@ -11,6 +11,8 @@ import autismo from "./imgs/autismo.png";
 import livro from "./imgs/livro.png";
 import GlobalStyle from "./GlobalStyle";
 
+const SCREEN_SIZE = window.screen.width;
+
 function App() {
   return (
     <>
@@ -37,17 +39,17 @@ function App() {
           <Shape
             gradient={{ first: "#ff0a6c", second: "#2d27ff" }}
             borderRadius="50%"
-            position={{ X: "25vw", Y: "-15vh" }}
+            position={{ R: "0", Y: SCREEN_SIZE <= 800 ? "-20vh" : "" }}
           />
           <Shape
             gradient={{ first: "#ff0a6c", second: "#2d27ff" }}
             borderRadius="50%"
-            position={{ X: "-55vw", Y: "-1vh" }}
+            position={{ X: "-40px", Y: SCREEN_SIZE <= 800 ? "85vh" : "0px" }}
           />
           <Sec
             imagem={autismo}
             titulo="Porque autismo?"
-            texto="Observamos que, a representatividade no mundo artístico vem finalmente tendo o seu reconhecimento, mas em contrapartidada, percebemos certas minorias sendo deixadas de lado, que são as pessoas com Transtorno deo Expectro Autista. Pessoas com esse Transtorno apresentam muitas dificuldades no Âmbito social,e o ser humano é um animal social, então nosso objetivo era tentar inserir-los nesse novo universo,mostrando seus problemas que devem ser enfrentados, e suas qualidades que devem ser valorizadas."
+            texto="Observamos que, a representatividade no mundo artístico vem finalmente tendo o seu reconhecimento, mas em contrapartida, percebemos certas minorias sendo deixadas de lado, as pessoas com Transtorno do Espectro Autista. Indivíduos com esse Transtorno apresentam muitas dificuldades no Âmbito social,porém, o ser humano é naturalmente social, ou seja, essas pessoas estão tendo sua função básica arrancada. Nosso objetivo é inserir-los nesse novo universo,mostrando seus problemas que devem ser enfrentados, e suas qualidades que devem ser valorizadas."
           />
         </section>
 
@@ -55,12 +57,13 @@ function App() {
           <Shape
             gradient={{ first: "#603813", second: "#b29f94" }}
             borderRadius="0% 100% 100% 0% / 55% 100% 0% 45%"
-            position={{ X: "25vw", Y: "-15vh" }}
+            // eslint-disable-next-line no-constant-condition
+            position={{ X: "0", Y: SCREEN_SIZE <= 800 ? "-20vh" : "" }}
           />
           <Shape
             gradient={{ first: "#603813", second: "#b29f94" }}
             borderRadius="100% 0% 49% 51% / 0% 17% 83% 100%"
-            position={{ X: "-55vw", Y: "-1vh" }}
+            position={{ R: "0", Y: SCREEN_SIZE <= 800 ? "85vh" : "" }}
           />
           <Sec
             imagem={livro}

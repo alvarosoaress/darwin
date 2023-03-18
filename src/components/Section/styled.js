@@ -17,15 +17,14 @@ export const SecImg = styled.img`
   scale: 0.7;
   transition: all 800ms ease-in;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (min-width: 601px) and (max-width: 800px) {
     top: -10em;
     left: -5em;
   }
 
-  @media screen and (max-width: 601px) {
-    width: 70%;
-    top: -5em;
-    left: -7em;
+  @media screen and (max-width: 600px) {
+    width: 25vw;
+    aspect-ratio: 9/16;
   }
 `;
 
@@ -33,11 +32,11 @@ export const SecDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 1rem;
   margin: 2em;
   width: 55vw;
-  height: 100%;
+  height: 25%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -45,6 +44,7 @@ export const SecDiv = styled.div`
   -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(255, 255, 255, 0.54);
   scroll-snap-align: center;
+  transition: all 400ms ease-in-out;
 
   h1 {
     color: white;
@@ -63,7 +63,7 @@ export const SecDiv = styled.div`
   }
 
   :hover {
-    //height: 55%;
+    height: 55%;
     box-shadow: 7px 3px 16px 10px rgba(92, 92, 92, 0.75);
     -webkit-box-shadow: 7px 3px 16px 10px rgba(92, 92, 92, 0.75);
     -moz-box-shadow: 7px 3px 16px 10px rgba(92, 92, 92, 0.75);
@@ -76,13 +76,13 @@ export const SecDiv = styled.div`
       display: flex;
     }
 
+    ${SecImg} {
+      top: -7em;
+    }
+
     ${Separator} {
       height: 2px;
       width: 60%;
-    }
-
-    ${SecImg} {
-      top: -7em;
     }
 
     button {
@@ -106,8 +106,8 @@ export const SecDiv = styled.div`
       font-size: 2.5rem;
     }
 
-    p {
-      font-size: 0.9rem;
+    :hover {
+      width: 80%;
     }
   }
 
@@ -118,6 +118,10 @@ export const SecDiv = styled.div`
 
     p {
       font-size: 0.7rem;
+    }
+
+    :hover {
+      width: 80%;
     }
   }
 `;
